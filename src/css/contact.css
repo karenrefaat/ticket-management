@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.contact-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #1a2b4a;
+  color: #ffffff;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #4da8ff;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.menu-item {
+  margin: 10px 0;
+}
+
+.sidebar-menu a, .logout-button {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-menu a:hover, .logout-button:hover {
+  background-color: #2c3e6b;
+  transform: translateX(5px);
+}
+
+.sidebar-menu a.active {
+  background-color: #4da8ff;
+  font-weight: 500;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.main-content {
+  margin-left: 250px;
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #f4f7fa;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #1a2b4a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.contact-form h2 {
+  font-size: 1.5rem;
+  color: #1a2b4a;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #34495e;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d9e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4da8ff;
+  box-shadow: 0 0 5px rgba(77, 168, 255, 0.3);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+}
+
+button {
+  background-color: #4da8ff;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #3b8de6;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar-title {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .sidebar-menu a, .logout-button {
+    padding: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .main-content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .menu-item {
+    margin: 5px;
+  }
+}
