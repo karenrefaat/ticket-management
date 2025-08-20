@@ -29,7 +29,6 @@ const RouteDebugger = () => {
 };
 
 export default function App() {
-  // Removed token clearing to allow persistent login sessions
   return (
     <Router>
       <RouteDebugger />

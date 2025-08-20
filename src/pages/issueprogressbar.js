@@ -3,7 +3,7 @@ import '../css/issueprogressbar.css';
 
 const IssueProgressBar = ({ issue, status }) => {
     const getProgress = () => {
-        return status === 'done' ? 100 : status === 'pending' ? 50 : status === 'opened' ? 10 : ''; // Example logic
+        return status === 'done' ? 100 : status === 'pending' ? 50 : status === 'opened' ? 10 : ''; 
     };
 
     return (

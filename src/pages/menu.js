@@ -13,11 +13,9 @@ const MenuBar = () => {
 
   return (
     <>
-      {/* Hamburger Button */}
       <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
         {!isOpen && "☰"}
       </button>
-      {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <h2 className="sidebar-title">Menu</h2>
         <ul className="sidebar-menu">
