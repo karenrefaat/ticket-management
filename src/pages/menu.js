@@ -1,7 +1,6 @@
-// src/components/MenuBar.js
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../css/dashboard.css"; // reuse same CSS for sidebar/hamburger
+import "../css/menu.css";
 
 const MenuBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,9 +15,8 @@ const MenuBar = () => {
     <>
       {/* Hamburger Button */}
       <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        ☰
+        {!isOpen && "☰"}
       </button>
-
       {/* Sidebar */}
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <h2 className="sidebar-title">Menu</h2>

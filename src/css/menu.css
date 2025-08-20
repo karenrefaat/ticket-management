@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.sidebar {
+    width: 100%;
+    max-width: 250px;
+    background-color: #1a2b4a;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease, left 0.3s ease;
+    top: 0;
+    left: -250px;
+    z-index: 1000;
+    overflow: hidden;
+    padding-top: 60px;
+}
+
+.sidebar.open {
+    left: 0;
+    z-index: 2000;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #4da8ff;
+    position: absolute;
+    top: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin-top: 60px;
+}
+
+.menu-item {
+    margin: 10px 0;
+}
+
+.sidebar-menu a,
+.logout-button {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.sidebar-menu a:hover,
+.logout-button:hover {
+    transform: translateX(5px);
+    background: none;
+}
+
+.sidebar-menu a.active {
+    background: none;
+    font-weight: 500;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    color: #1a2b4a;
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 30px;
+    background-color: #f4f7fa;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.open~.main-content {
+    margin-left: 250px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        padding-top: 50px;
+    }
+
+    .sidebar-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .sidebar-menu a,
+    .logout-button {
+        background: none;
+        padding: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .main-content {
+        margin-left: 80px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        left: 0;
+        padding-top: 10px;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu-item {
+        margin: 5px;
+    }
+
+    .hamburger {
+        top: 10px;
+        left: 10px;
+    }
+
+    .sidebar-title {
+        top: 10px;
+    }
+
+    .sidebar-menu {
+        margin-top: 40px;
+    }
+}

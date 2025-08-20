@@ -13,7 +13,6 @@ export default function Login() {
 
   const onSubmit = (data) => {
     const { username, password } = data;
-
     if (username === hardcodedUser.username && password === hardcodedUser.password) {
       // Save token in localStorage
       localStorage.setItem("token", "karen123");
@@ -38,22 +37,17 @@ export default function Login() {
             type="text"
             placeholder="Enter your Username"
             {...register("username", { required: "Username is required" })}
-            className="login-input"
-          />
+            className="login-input" />
           {errors.username && <p className="error-text">{errors.username.message}</p>}
-
           {/* Password */}
           <input
             type="password"
             placeholder="Enter your Password"
             {...register("password", { required: "Password is required" })}
-            className="login-input"
-          />
+            className="login-input" />
           {errors.password && <p className="error-text">{errors.password.message}</p>}
-
           {/* Root (custom) error */}
           {errors.root && <p className="error-text">{errors.root.message}</p>}
-
           <button type="submit" className="login-button">Login</button>
         </form>
       </div>

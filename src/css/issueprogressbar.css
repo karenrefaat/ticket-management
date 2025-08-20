@@ -1,0 +1,56 @@
+.progress-section {
+    position: absolute;
+    top: 95px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.progress-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.issue-label {
+    font-size: 0.9rem;
+    color: #1a2b4a;
+    flex: 1;
+}
+
+.progress-bar {
+    flex: 2;
+    height: 10px;
+    background: #e0e6ed;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4da8ff;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.status-label {
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+@media (max-width: 768px) {
+    .progress-section {
+        right: 20px;
+        width: 250px;
+    }
+
+    .progress-item {
+        width: 100%;
+    }
+}

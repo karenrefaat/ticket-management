@@ -13,13 +13,9 @@ const Settings = () => {
 
   return (
     <div className="settings-container">
-      {/* ✅ Reusable sidebar (already has handleLogout inside menu.js) */}
       <MenuBar />
-
-      {/* Page-specific content */}
       <div className="main-content">
         <h1 className="settings-title">Settings</h1>
-
         <div className="settings-form">
           <h2>Update Profile</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -28,11 +24,9 @@ const Settings = () => {
               <input
                 id="username"
                 {...register("username", { required: "Username is required" })}
-                placeholder="Enter your username"
-              />
+                placeholder="Enter your username" />
               {errors.username && <span className="error">{errors.username.message}</span>}
             </div>
-
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -45,11 +39,9 @@ const Settings = () => {
                     message: "Invalid email address",
                   },
                 })}
-                placeholder="Enter your email"
-              />
+                placeholder="Enter your email" />
               {errors.email && <span className="error">{errors.email.message}</span>}
             </div>
-
             <div className="form-group">
               <label htmlFor="password">New Password</label>
               <input
@@ -58,11 +50,9 @@ const Settings = () => {
                 {...register("password", {
                   minLength: { value: 6, message: "Password must be at least 6 characters" },
                 })}
-                placeholder="Enter new password (optional)"
-              />
+                placeholder="Enter new password (optional)" />
               {errors.password && <span className="error">{errors.password.message}</span>}
             </div>
-
             <button type="submit">Save Changes</button>
           </form>
         </div>
