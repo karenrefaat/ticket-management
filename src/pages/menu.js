@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../css/menu.css";
 
 const MenuBar = () => {
@@ -17,19 +17,19 @@ const MenuBar = () => {
         {!isOpen && "☰"}
       </button>
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
-        <h2 className="sidebar-title">Menu</h2>
+        <h2 className="sidebar-title" onClick ={()=> setIsOpen(false)}>Menu</h2>
         <ul className="sidebar-menu">
           <li className="menu-item">
-            <NavLink to="/dashboard" activeClassName="active">Home</NavLink>
+            <Link to="/dashboard" a>Home</Link>
           </li>
           <li className="menu-item">
-            <NavLink to="/about" activeClassName="active">About Us</NavLink>
+            <Link to="/about" >About Us</Link>
           </li>
           <li className="menu-item">
-            <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+            <Link to="/contact" >Contact</Link>
           </li>
           <li className="menu-item">
-            <NavLink to="/settings" activeClassName="active">Settings</NavLink>
+            <Link to="/settings">Settings</Link>
           </li>
           <li className="menu-item">
             <button onClick={handleLogout} className="logout-button">

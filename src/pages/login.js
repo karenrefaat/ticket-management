@@ -6,7 +6,6 @@ import "../css/login.css";
 export default function Login() {
   const navigate = useNavigate();
 
-
   const { register, handleSubmit, formState: { errors }, setError, } = useForm();
 
   const hardcodedUser = { username: "karenrefaat227", password: "Karen_227" };

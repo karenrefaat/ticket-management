@@ -28,25 +28,27 @@
 }
 
 .sidebar-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 30px;
     font-weight: 600;
     color: #4da8ff;
     position: absolute;
     top: 20px;
+    cursor: pointer;
 }
 
 .sidebar-menu {
-    list-style: none;
+    list-style:none;
     margin-top: 60px;
 }
 
 .menu-item {
     margin: 10px 0;
+    font-size: 1.5 rem;
+    
 }
 
-.sidebar-menu a,
-.logout-button {
+.sidebar-menu a {
     color: #ffffff;
     text-decoration: none;
     display: block;
@@ -63,17 +65,14 @@
     background: none;
 }
 
-.sidebar-menu a.active {
-    background: none;
-    font-weight: 500;
-}
-
 .logout-button {
     background: none;
     border: none;
     cursor: pointer;
     width: 100%;
     text-align: left;
+    color: #ffffff;
+    display: block;
 }
 
 .hamburger {
@@ -144,6 +143,7 @@
     .sidebar-menu {
         display: flex;
         justify-content: space-around;
+        margin-top: 40px;
     }
 
     .menu-item {
@@ -157,9 +157,5 @@
 
     .sidebar-title {
         top: 10px;
-    }
-
-    .sidebar-menu {
-        margin-top: 40px;
     }
 }

@@ -24,7 +24,7 @@ const Dashboard = () => {
     };
     setTickets([...tickets, newTicket]);
     reset({
-      priority: '',
+      priority: 'Select priority',
       customer: '',
       issue: ''
     });
@@ -67,7 +67,7 @@ const Dashboard = () => {
             </div>
             <div className="form-group">
               <label htmlFor="priority">Priority</label>
-              <select id="priority" {...register("priority", { required: "Priority is required" })}>
+              <select id="priority" defaultValue="" {...register("priority", { required: "Priority is required" })}>
                 <option value="" disabled hidden>Select priority</option>
                 <option value="High">High</option>
                 <option value="Medium">Medium</option>
