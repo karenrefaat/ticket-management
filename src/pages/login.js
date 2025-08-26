@@ -10,12 +10,12 @@ export default function Login() {
 
   const hardcodedUsers = [
     { username: "karenrefaat227", password: "Karen_227", role: "customer" },
-    { username: "john_doe", password: "User123", role: "customer" },
-    { username: "sara", password: "Pass_789", role: "customer" },
+    { username: "Kenzo_Refaat", password: "User123", role: "customer" },
+    { username: "Sherry", password: "Pass_789", role: "customer" },
 
-    { username: "admin123", password: "Admin_123", role: "admin" },
-    { username: "superadmin", password: "Root_999", role: "admin" },
-    { username: "manager", password: "Mng_456", role: "admin" }
+    { username: "Ahmed", password: "Admin_123", role: "admin" },
+    { username: "SalahHassan", password: "Root_999", role: "admin" },
+    { username: "Samar-Hossam", password: "Mng_456", role: "admin" }
   ];
 
   const onSubmit = (data) => {

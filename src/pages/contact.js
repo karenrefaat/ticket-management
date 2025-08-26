@@ -5,7 +5,7 @@ import MenuBar from "./menu";
 
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  const role = localStorage.getItem("role"); // check role (admin or customer)
+  const role = localStorage.getItem("role");
 
   const onSubmit = (data) => {
     console.log("Contact Form Submitted:", data);
@@ -18,7 +18,6 @@ const Contact = () => {
       <div className="main-content">
         <h1 className="contact-title">Contact</h1>
 
-        {/* CUSTOMER FORM */}
         {role === "customer" && (
           <div className="contact-form">
             <h2>Write your message here</h2>
@@ -72,29 +71,32 @@ const Contact = () => {
           </div>
         )}
 
-        {/* ADMIN FORM */}
         {role === "admin" && (
           <div className="contact-form">
-            <h2>Message Another Admin</h2>
+            <h2>Contact Customer</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
-                <label htmlFor="recipient">Recipient (Admin Email/Username)</label>
-                <input
+                <label htmlFor="recipient">Select Customer</label>
+                <select
                   id="recipient"
-                  {...register("recipient", { required: "Recipient is required" })}
-                  placeholder="Enter admin email or username"
-                />
+                  {...register("recipient", { required: "Customer is required" })}
+                >
+                  <option value="">--Choose Customer--</option>
+                  <option value="karenrefaat227">karenrefaat227</option>
+                  <option value="john_doe">john_doe</option>
+                  <option value="sara">sara</option>
+                </select>
                 {errors.recipient && (
                   <span className="error">{errors.recipient.message}</span>
                 )}
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Problem / Subject</label>
+                <label htmlFor="subject">Subject</label>
                 <input
                   id="subject"
                   {...register("subject", { required: "Subject is required" })}
-                  placeholder="Enter problem subject"
+                  placeholder="Enter subject (ex: Problem with login)"
                 />
                 {errors.subject && (
                   <span className="error">{errors.subject.message}</span>
@@ -106,10 +108,55 @@ const Contact = () => {
                 <textarea
                   id="details"
                   {...register("details", { required: "Details are required" })}
-                  placeholder="Describe the problem..."
+                  placeholder="Ask customer about problem details..."
                 />
                 {errors.details && (
                   <span className="error">{errors.details.message}</span>
+                )}
+              </div>
+
+              <button type="submit">Send to Customer</button>
+            </form>
+          </div>
+        )}
+
+        {role === "admin" && (
+          <div className="contact-form">
+            <h2>Message Another Admin</h2>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-group">
+                <label htmlFor="adminRecipient">Recipient (Admin Email/Username)</label>
+                <input
+                  id="adminRecipient"
+                  {...register("adminRecipient", { required: "Recipient is required" })}
+                  placeholder="Enter admin email or username"
+                />
+                {errors.adminRecipient && (
+                  <span className="error">{errors.adminRecipient.message}</span>
+                )}
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="adminSubject">Subject</label>
+                <input
+                  id="adminSubject"
+                  {...register("adminSubject", { required: "Subject is required" })}
+                  placeholder="Enter subject"
+                />
+                {errors.adminSubject && (
+                  <span className="error">{errors.adminSubject.message}</span>
+                )}
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="adminDetails">Details</label>
+                <textarea
+                  id="adminDetails"
+                  {...register("adminDetails", { required: "Details are required" })}
+                  placeholder="Describe the problem..."
+                />
+                {errors.adminDetails && (
+                  <span className="error">{errors.adminDetails.message}</span>
                 )}
               </div>
 

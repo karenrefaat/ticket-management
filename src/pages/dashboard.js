@@ -7,10 +7,10 @@ export default function Dashboard() {
   const role = localStorage.getItem("role"); 
  
   const [issues, setIssues] = useState([
-    { id: 1, customer: "John Doe", priority: "High", status: "pending" },
-    { id: 2, customer: "Sara Ali", priority: "Low", status: "solved" },
-    { id: 3, customer: "Mike Lee", priority: "Medium", status: "pending" },
-    { id: 4, customer: "Lara Smith", priority: "High", status: "not_reached" },
+    { id: 1, customer: "Sandra Refaat", priority: "High", status: "pending" },
+    { id: 2, customer: "Silvia Boulos", priority: "Low", status: "solved" },
+    { id: 3, customer: "Monica Talaat", priority: "Medium", status: "pending" },
+    { id: 4, customer: "Refaat Wadie", priority: "High", status: "not_reached" },
   ]);
 
   useEffect(() => {
