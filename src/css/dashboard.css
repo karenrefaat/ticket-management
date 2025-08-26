@@ -108,6 +108,7 @@ button:active {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
 .data-table h2 {
@@ -149,32 +150,20 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 80px;
-    padding: 20px;
-  }
-
-  .dashboard-title {
-    font-size: 1.5rem;
-  }
-
-  .ticket-form {
-    max-width: 100%;
-  }
-
-  table {
-    font-size: 0.85rem;
-  }
-
-  th,
-  td {
-    padding: 10px;
-  }
+.admin .data-table h2 {
+  text-align: left;
 }
 
-@media (max-width: 480px) {
-  .main-content {
-    margin-left: 0;
-  }
+.admin .data-table td:first-child {
+  font-weight: 500;
+  color: #34495e;
+  text-align: left;
+}
+
+.admin .dashboard-title {
+  margin-bottom: 25px;
+}
+
+.admin tr td:last-child input[type="checkbox"] {
+  transform: scale(1.2);
 }

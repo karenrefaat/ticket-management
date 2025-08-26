@@ -6,16 +6,33 @@ import "../css/login.css";
 export default function Login() {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors }, setError, } = useForm();
+  const { register, handleSubmit, formState: { errors }, setError } = useForm();
 
-  const hardcodedUser = { username: "karenrefaat227", password: "Karen_227" };
+  const hardcodedUsers = [
+    { username: "karenrefaat227", password: "Karen_227", role: "customer" },
+    { username: "john_doe", password: "User123", role: "customer" },
+    { username: "sara", password: "Pass_789", role: "customer" },
+
+    { username: "admin123", password: "Admin_123", role: "admin" },
+    { username: "superadmin", password: "Root_999", role: "admin" },
+    { username: "manager", password: "Mng_456", role: "admin" }
+  ];
 
   const onSubmit = (data) => {
     const { username, password } = data;
-    if (username === hardcodedUser.username && password === hardcodedUser.password) {
-      localStorage.setItem("token", "karen123");
-      console.log("Login: Token set =", localStorage.getItem("token"));
-      navigate("/dashboard");
+
+    const user = hardcodedUsers.find(
+      (u) => u.username === username && u.password === password
+    );
+
+    if (user) {
+      localStorage.setItem("token", "karen123"); 
+      localStorage.setItem("role", user.role);
+      localStorage.setItem("username", user.username);
+
+      console.log("Login Success:", user.username, "| Role:", user.role);
+        navigate("/dashboard");
+    
     } else {
       setError("root", { message: "Invalid username or password." });
     }
@@ -31,15 +48,20 @@ export default function Login() {
             type="text"
             placeholder="Enter your Username"
             {...register("username", { required: "Username is required" })}
-            className="login-input" />
+            className="login-input"
+          />
           {errors.username && <p className="error-text">{errors.username.message}</p>}
+
           <input
             type="password"
             placeholder="Enter your Password"
             {...register("password", { required: "Password is required" })}
-            className="login-input" />
+            className="login-input"
+          />
           {errors.password && <p className="error-text">{errors.password.message}</p>}
+
           {errors.root && <p className="error-text">{errors.root.message}</p>}
+
           <button type="submit" className="login-button">Login</button>
         </form>
       </div>
